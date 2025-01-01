@@ -1,0 +1,36 @@
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    border-radius: 12px;
+  }
+  
+  .product-list img {
+    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+  
+  .product-list .btn {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+
+  /* media query */
+  @media (min-width: 320px) and (max-width: 667px) {
+    .card {
+      margin-bottom: 20px;
+    }
+    .btn {
+      font-size: 0.8rem;
+    }
+  }
+  

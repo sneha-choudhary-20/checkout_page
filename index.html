@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pride of Cows Checkout</title>
+  <!-- bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Pride of Cows Checkout</h1>
+    <div class="row g-4">
+      <!-- Summary Section -->
+      <div class="col-lg-6">
+        <div class="card shadow">
+          <div class="card-body" style="background-color: #eeeeee;">
+            <h2 class="card-title mb-4">Order Summary</h2>
+            <div class="product-list">
+              <!-- Milk Product -->
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="images/milk.jpg" alt="Milk Bottle" class="img-fluid me-3">
+                <div class="d-flex flex-column flex-grow-1">
+                  <p class="mb-0 fw-bold text-start">Premium Milk Bottle</p>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary btn-sm me-2" onclick="updateQuantity('milk', -1)">-</button>
+                    <span id="milk-quantity" class="fw-bold">1</span>
+                    <button class="btn btn-outline-primary btn-sm ms-2" onclick="updateQuantity('milk', 1)">+</button>
+                  </div>
+                </div>
+                <p class="fw-bold mb-0 text-end" id="milk-price">₹80</p>
+              </div>
+              <!-- Paneer Product -->
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="images/paneer.jpg" alt="Paneer" class="img-fluid me-3">
+                <div class="d-flex flex-column flex-grow-1">
+                  <p class="mb-0 fw-bold text-start">Paneer</p>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary btn-sm me-2" onclick="updateQuantity('paneer', -1)">-</button>
+                    <span id="paneer-quantity" class="fw-bold">1</span>
+                    <button class="btn btn-outline-primary btn-sm ms-2" onclick="updateQuantity('paneer', 1)">+</button>
+                  </div>
+                </div>
+                <p class="fw-bold mb-0 text-end" id="paneer-price">₹150</p>
+              </div>
+              <!-- curd Product -->
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="images/curd.jpg" alt="Curd" class="img-fluid me-3">
+                <div class="d-flex flex-column flex-grow-1">
+                  <p class="mb-0 fw-bold text-start">Curd</p>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary btn-sm me-2" onclick="updateQuantity('curd', -1)">-</button>
+                    <span id="curd-quantity" class="fw-bold">1</span>
+                    <button class="btn btn-outline-primary btn-sm ms-2" onclick="updateQuantity('curd', 1)">+</button>
+                  </div>
+                </div>
+                <p class="fw-bold mb-0 text-end" id="curd-price">₹120</p>
+              </div>
+              <!-- butter Product -->
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="images/butter.jpg" alt="Butter" class="img-fluid me-3">
+                <div class="d-flex flex-column flex-grow-1">
+                  <p class="mb-0 fw-bold text-start">Butter</p>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary btn-sm me-2" onclick="updateQuantity('butter', -1)">-</button>
+                    <span id="butter-quantity" class="fw-bold">1</span>
+                    <button class="btn btn-outline-primary btn-sm ms-2" onclick="updateQuantity('butter', 1)">+</button>                    
+                  </div>
+                </div>
+                <p class="fw-bold mb-0 text-end" id="butter-price">₹180</p>
+              </div>
+            </div>
+            <!-- Coupon Section -->
+            <div class="mt-4">
+              <div class="d-flex align-items-center mb-3">
+                <input type="text" id="couponCode" class="form-control me-2" placeholder="Enter coupon code">
+                <button class="btn btn-primary" onclick="applyCoupon()">Apply</button>
+              </div>
+              <p id="discountMessage" class="text-success"></p>
+              <!-- Pricing Details -->
+              <p>Subtotal: <span id="subtotal" class="fw-bold">₹230</span></p>
+              <p>Tax: <span id="tax" class="fw-bold">₹11.50</span></p>
+              <p>Total: <span id="total" class="fw-bold">₹241.50</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--// Summary Section -->
+
+      <!-- Contact Form Section -->
+      <div class="col-lg-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <h2 class="card-title mb-4">Contact Information</h2>
+            <form id="checkoutForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Delivery Address</label>
+                <textarea id="address" class="form-control" placeholder="Enter delivery address" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Checkout</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--// Contact Form Section -->
+    </div>
+  </div>
+
+  <!-- js -->
+  <script src="script.js"></script>
+</body>
+</html>
